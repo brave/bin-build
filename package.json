@@ -5,36 +5,41 @@
   "license": "MIT",
   "repository": "kevva/bin-build",
   "author": {
-    "name": "Kevin Mårtensson",
-    "email": "kevinmartensson@gmail.com",
-    "url": "https://github.com/kevva"
+	"name": "Kevin Mårtensson",
+	"email": "kevinmartensson@gmail.com",
+	"url": "https://github.com/kevva"
   },
   "engines": {
-    "node": ">=6"
+	"node": ">=14"
   },
   "scripts": {
-    "test": "xo && ava"
+	"test": "xo && ava"
   },
+  "type": "module",
   "files": [
-    "index.js"
+	"index.js"
   ],
+  "main": "index.js",
   "keywords": [
-    "binary",
-    "build",
-    "make"
+	"binary",
+	"build",
+	"make"
   ],
   "dependencies": {
-    "decompress": "^4.0.0",
-    "download": "^7.0.0",
-    "execa": "^0.7.0",
-    "p-map-series": "^1.0.0",
-    "tempfile": "^2.0.0"
+	"decompress": "^4.0.0",
+	"download": "github:onyb/download#c9c2589",
+	"execa": "^0.7.0",
+	"p-map-series": "^1.0.0",
+	"tempfile": "^2.0.0"
   },
   "devDependencies": {
-    "ava": "*",
-    "del": "^3.0.0",
-    "nock": "^9.0.0",
-    "path-exists": "^3.0.0",
-    "xo": "*"
+	"ava": "*",
+	"del": "^3.0.0",
+	"nock": "^9.0.0",
+	"path-exists": "^3.0.0",
+	"xo": "*"
+  },
+  "ava": {
+	"timeout": "2m"
   }
 }
