@@ -1,45 +1,45 @@
 {
-	"name": "bin-build",
-	"version": "3.0.0",
-	"description": "Easily build binaries",
-	"license": "MIT",
-	"repository": "kevva/bin-build",
-	"author": {
-		"name": "Kevin Mårtensson",
-		"email": "kevinmartensson@gmail.com",
-		"url": "https://github.com/kevva"
-	},
-	"engines": {
-		"node": ">=14"
-	},
-	"scripts": {
-		"test": "xo && ava"
-	},
-	"type": "module",
-	"files": [
-		"index.js"
-	],
-	"main": "index.js",
-	"keywords": [
-		"binary",
-		"build",
-		"make"
-	],
-	"dependencies": {
-		"decompress": "^4.0.0",
-		"download": "github:onyb/download#c9c2589",
-		"execa": "^0.7.0",
-		"p-map-series": "^1.0.0",
-		"tempfile": "^2.0.0"
-	},
-	"devDependencies": {
-		"ava": "^6.0.1",
-		"del": "^3.0.0",
-		"nock": "^13.4.0",
-		"path-exists": "^3.0.0",
-		"xo": "^0.56.0"
-	},
-	"ava": {
-		"timeout": "2m"
-	}
+  "name":"bin-build",
+  "version":"3.1.0",
+  "description":"Easily build binaries",
+  "license":"MIT",
+  "repository":"kevva/bin-build",
+  "author":{
+    "name":"Kevin Mårtensson",
+    "email":"kevinmartensson@gmail.com",
+    "url":"https://github.com/kevva"
+  },
+  "engines":{
+    "node":">=14"
+  },
+  "scripts":{
+    "test":"xo && ava"
+  },
+  "type":"module",
+  "files":[
+    "index.js"
+  ],
+  "main":"index.js",
+  "keywords":[
+    "binary",
+    "build",
+    "make"
+  ],
+  "dependencies":{
+    "decompress":"^4.0.0",
+    "download":"github:onyb/download#c9c2589",
+    "execa":"^0.7.0",
+    "p-map-series":"^1.0.0",
+    "tempfile":"^2.0.0"
+  },
+  "devDependencies":{
+    "ava":"^6.0.1",
+    "del":"^3.0.0",
+    "nock":"^13.4.0",
+    "path-exists":"^3.0.0",
+    "xo":"^0.56.0"
+  },
+  "ava":{
+    "timeout":"2m"
+  }
 }

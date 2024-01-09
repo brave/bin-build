@@ -45,7 +45,16 @@ test('build source from existing archive', async t => {
 });
 
 test('accepts a string', async t => {
-	await t.throwsAsync(() => m.directory([]), {instanceOf: TypeError, message: 'Expected a `string`, got `object`'});
-	await t.throwsAsync(() => m.file([]), {instanceOf: TypeError, message: 'Expected a `string`, got `object`'});
-	await t.throwsAsync(() => m.url([]), {instanceOf: TypeError, message: 'Expected a `string`, got `object`'});
+	await t.throwsAsync(() => m.directory([]), {
+		instanceOf: TypeError,
+		message: 'Expected a `string`, got `object`',
+	});
+	await t.throwsAsync(() => m.file([]), {
+		instanceOf: TypeError,
+		message: 'Expected a `string`, got `object`',
+	});
+	await t.throwsAsync(() => m.url([]), {
+		instanceOf: TypeError,
+		message: 'Expected a `string`, got `object`',
+	});
 });
