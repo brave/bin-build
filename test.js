@@ -1,4 +1,5 @@
 import path from 'node:path';
+import fs from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import del from 'del';
 import nock from 'nock';
@@ -20,7 +21,9 @@ test.afterEach(async t => {
 test('download and build source', async t => {
 	nock('http://foo.com')
 		.get('/gifsicle.tar.gz')
-		.replyWithFile(200, path.join(__dirname, 'fixtures', 'test.tar.gz'));
+		.reply(200, () =>
+			fs.readFile(path.join(__dirname, 'fixtures', 'test.tar.gz')),
+		);
 
 	await m.url('http://foo.com/gifsicle.tar.gz', [
 		'autoreconf -ivf',
@@ -42,7 +45,16 @@ test('build source from existing archive', async t => {
 });
 
 test('accepts a string', async t => {
-	await t.throwsAsync(() => m.directory([]), {instanceOf: TypeError, message: 'Expected a `string`, got `object`'});
-	await t.throwsAsync(() => m.file([]), {instanceOf: TypeError, message: 'Expected a `string`, got `object`'});
-	await t.throwsAsync(() => m.url([]), {instanceOf: TypeError, message: 'Expected a `string`, got `object`'});
+	await t.throwsAsync(() => m.directory([]), {
+		instanceOf: TypeError,
+		message: 'Expected a `string`, got `object`',
+	});
+	await t.throwsAsync(() => m.file([]), {
+		instanceOf: TypeError,
+		message: 'Expected a `string`, got `object`',
+	});
+	await t.throwsAsync(() => m.url([]), {
+		instanceOf: TypeError,
+		message: 'Expected a `string`, got `object`',
+	});
 });
